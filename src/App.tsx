@@ -26,7 +26,8 @@ import {
   Briefcase,
   Hammer,
   Stethoscope,
-  BookOpen
+  BookOpen,
+  Sparkles
 } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -39,7 +40,9 @@ function cn(...inputs: ClassValue[]) {
 
 // --- Types ---
 
-type ViewMode = 'landing' | 'builder' | 'admin' | 'admin-login' | 'templates' | 'dashboard';
+type ViewMode = 'landing' | 'builder' | 'admin' | 'admin-login' | 'templates' | 'dashboard' | 'apex-app';
+
+import ApexApp from './components/app/ApexApp';
 type EditorMode = 'visual' | 'code';
 type DeviceMode = 'desktop' | 'mobile';
 
@@ -607,8 +610,12 @@ const LandingPage = ({ onStart, onSelectPlan, onSelectDomain, paymentConfig, set
                 ابدأ بناء موقعك
                 <ArrowRight className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               </button>
-              <button className="bg-white border border-zinc-200 text-zinc-900 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-zinc-50 transition-all">
-                استكشف القوالب
+              <button 
+                onClick={() => setView('apex-app')}
+                className="bg-cyan-500 text-gray-900 px-8 py-4 rounded-2xl text-lg font-bold hover:bg-cyan-400 transition-all flex items-center gap-2"
+              >
+                <Sparkles className="w-5 h-5" />
+                جرب Apex App
               </button>
             </div>
             
@@ -1481,6 +1488,15 @@ export default function App() {
               initialCss={selectedTemplate?.css} 
               onSave={saveSite}
             />
+          </motion.div>
+        ) : view === 'apex-app' ? (
+          <motion.div
+            key="apex-app"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <ApexApp onNavigateHome={() => setView('landing')} />
           </motion.div>
         ) : view === 'admin-login' ? (
           <motion.div
