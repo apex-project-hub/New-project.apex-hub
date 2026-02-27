@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { Music, Brain, Package, Home, ChevronRight, Sparkles } from "lucide-react";
 import MusicPlayer from "./MusicPlayer";
 import ApexQuiz from "./ApexQuiz";

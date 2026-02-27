@@ -3,9 +3,9 @@ import { Check, Star } from 'lucide-react';
 
 export default function PackagesSection({ highlightPackage }: { highlightPackage: string | null }) {
   const packages = [
-    { id: 'basic', name: 'الأساسي', price: '$19', features: ['استضافة مجانية', 'دومين مجاني', 'دعم فني 24/7'] },
-    { id: 'premium', name: 'الاحترافي', price: '$49', features: ['استضافة سريعة', 'دومين مجاني', 'دعم فني 24/7', 'تحليل SEO', 'تصميم مخصص'], popular: true },
-    { id: 'enterprise', name: 'الشركات', price: '$99', features: ['استضافة مخصصة', 'دومين مجاني', 'دعم فني 24/7', 'تحليل SEO', 'تصميم مخصص', 'بوابات دفع'] },
+    { id: 'basic', name: 'الباقة الأساسية', price: '$29', features: ['استضافة سريعة', 'دومين .com مجاني', 'دعم فني 24/7'] },
+    { id: 'premium', name: 'باقة الأعمال', price: '$69', features: ['استضافة فائقة السرعة', 'دومين .com مجاني', 'دعم فني VIP', 'تحليل SEO متقدم', 'تصميم مخصص'], popular: true },
+    { id: 'enterprise', name: 'الباقة الاحترافية', price: '$129', features: ['سيرفر خاص مخصص', 'دومينات متعددة مجانية', 'دعم فني مباشر', 'تحليل SEO شامل', 'تصميم متكامل', 'بوابات دفع جاهزة'] },
   ];
 
   return (

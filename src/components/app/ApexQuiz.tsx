@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 export default function ApexQuiz({ onComplete }: { onComplete: (result: { score: number, package: any }) => void }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
